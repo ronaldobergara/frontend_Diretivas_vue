@@ -1,14 +1,19 @@
 <template>
-  <p>Acesse: <span v-html="link"></span></p>
+  <a href="#interno" v-on:click.once.prevent="something">Link Interno</a>
+
+  <input type="text" v-on:keyup.k="typing" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  data() {
-    return {
-      link: '<a href="https://cataline.io">Cataline<a/>'
+  methods: {
+    something() {
+      console.log('Hello Kaori')
+    },
+    typing() {
+      console.log('Digitando')
     }
   }
 })
