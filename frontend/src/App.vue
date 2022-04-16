@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h1 v-if="sex === 'Masculino'">Masculino</h1>
-    <h1 v-else-if="sex === 'Feminino'">Feminino</h1>
-    <h1 v-else>Outro</h1>
+    <h1 v-show="sex === 'Masculino'">Masculino</h1>
   </div>
 </template>
 
@@ -12,7 +10,7 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   data() {
     return {
-      sex: 'Masculino'
+      sex: 'Fe'
     }
   }
 })
