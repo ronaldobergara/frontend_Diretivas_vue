@@ -1,17 +1,17 @@
 <template>
-  <h1 :class="['static', { 'text-danger': hasError }, className]">Hello Kaori</h1>
+  <ButtonStyled />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import ButtonStyled from '@/components/ButtonStyled.vue'
 
 export default defineComponent({
-  data() {
-    return {
-      isActive: true,
-      hasError: true,
-      className: 'teste'
-    }
+  components: {
+    ButtonStyled
   }
 })
 </script>
+
+/
+<style scoped></style>
