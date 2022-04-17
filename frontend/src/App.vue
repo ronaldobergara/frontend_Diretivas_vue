@@ -1,5 +1,5 @@
 <template>
-  <h1 class="static" :class="{ active: isActive, 'text-danger': hasError }">Hello Kaori</h1>
+  <h1 :class="['static', { 'text-danger': hasError }, className]">Hello Kaori</h1>
 </template>
 
 <script lang="ts">
@@ -9,7 +9,8 @@ export default defineComponent({
   data() {
     return {
       isActive: true,
-      hasError: true
+      hasError: true,
+      className: 'teste'
     }
   }
 })
