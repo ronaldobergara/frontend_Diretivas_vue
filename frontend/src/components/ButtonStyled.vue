@@ -1,5 +1,8 @@
 <template>
-  <button>Botão estilizado</button>
+  <button class="button-styled">
+    Botão estilizado
+    <span>Kaori</span>
+  </button>
 </template>
 
 <script lang="ts">

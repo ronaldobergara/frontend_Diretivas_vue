@@ -13,5 +13,11 @@ export default defineComponent({
 })
 </script>
 
-/
-<style scoped></style>
+<style scoped>
+.button-styled {
+  background: green;
+}
+::v-deep.button-styled span {
+  color: black;
+}
+</style>
