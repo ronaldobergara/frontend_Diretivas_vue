@@ -1,8 +1,6 @@
 <template>
-  <button class="button-styled">
-    <slot name="before" />
+  <button class="button-styled" @click="$emit('passarinho', 'calopsita')">
     {{ text }}
-    <slot name="after" />
   </button>
 </template>
 
@@ -13,7 +11,7 @@ export default defineComponent({
   props: {
     text: {
       type: String,
-      required: true
+      default: 'Botão'
     }
   }
 })
