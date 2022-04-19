@@ -1,5 +1,5 @@
 <template>
-  <ButtonStyled />
+  <ButtonStyled text="Cadastro" color="primary" :user="user" />
 </template>
 
 <script lang="ts">
@@ -7,17 +7,16 @@ import { defineComponent } from 'vue'
 import ButtonStyled from '@/components/ButtonStyled.vue'
 
 export default defineComponent({
-  components: {
-    ButtonStyled
+  components: { ButtonStyled },
+  data() {
+    return {
+      user: {
+        id: 1,
+        name: 'Kaori'
+      }
+    }
   }
 })
 </script>
 
-<style scoped>
-.button-styled {
-  background: green;
-}
-::v-deep.button-styled span {
-  color: black;
-}
-</style>
+<style scoped></style>
