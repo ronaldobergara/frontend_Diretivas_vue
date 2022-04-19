@@ -1,32 +1,18 @@
 <template>
-  <button :class="['button-styled', color]">{{ text }} {{ user.name }}</button>
+  <button class="button-styled">
+    <slot name="before" />
+    {{ text }}
+    <slot name="after" />
+  </button>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-
-type color = 'sucess' | 'danger' | 'primary'
-
-interface User {
-  id: number
-  name: string
-}
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
     text: {
       type: String,
-      required: true
-    },
-    color: {
-      type: String,
-      default: 'primary',
-      validator: (value: color) => {
-        return ['sucess', 'danger', 'primary'].includes(value)
-      }
-    },
-    user: {
-      type: Object as PropType<User>,
       required: true
     }
   }
@@ -34,7 +20,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-button {
+.button-styled {
   color: #fff;
   border-radius: 0.3rem;
   padding: 0.5rem 1rem;
@@ -46,17 +32,5 @@ button {
   background-color: #2d6cea;
   width: 130px;
   height: 50px;
-}
-
-.success {
-  background-color: green;
-}
-
-.danger {
-  background-color: red;
-}
-
-.primary {
-  background-color: #2d6cea;
 }
 </style>
