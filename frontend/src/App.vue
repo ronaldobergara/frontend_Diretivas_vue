@@ -4,7 +4,7 @@
   <transition
     enter-active-class="animate__animated animate__backInDown"
     leave-active-class="animate__animated animate__backOutDown"
-    @after-enter="afterEnter"
+    :appear="true"
   >
     <h1 v-if="show">Kaori</h1>
   </transition>
@@ -17,19 +17,11 @@ import 'animate.css'
 export default defineComponent({
   data() {
     return {
-      show: false
-    }
-  },
-  methods: {
-    afterEnter: (element: HTMLElement) => {
-      element.classList.add('teste')
+      show: true,
+      teste: true
     }
   }
 })
 </script>
 
-<style scoped>
-.teste {
-  background: blue;
-}
-</style>
+<style scoped></style>
